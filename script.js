@@ -1,3 +1,12 @@
+// Here are all of the variables that select the main elements on the html page
+var introCardEl = document.getElementById('introCard');
+var questionCardEl = document.getElementById('questionCard');
+var highScoreEl = document.getElementById('highScoreCard');
+
+
+
+
+
 var startButton = document.getElementById('start_button');
 
 

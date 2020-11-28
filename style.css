@@ -1,6 +1,22 @@
 p1 {
-    float: right;
+    float: left;
 }
+
+#highScoresLink,
+#startOverLink {
+    font-size: 50px;
+}
+
+#timerCountdown {
+    float: right;
+    padding-right: 10px;
+}
+
+.card {
+    width: 75%;
+}
+
+.btn
 
 .hello {
     font-size: 100px;
