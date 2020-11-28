@@ -1,6 +1,9 @@
 // Here are all of the variables that select the main elements on the html page
+var highScoresLinkEl = document.getElementById('highScoresLink');
+var timerCountdownEl = document.getElementById('timerCountdown');
 var introCardEl = document.getElementById('introCard');
 var questionCardEl = document.getElementById('questionCard');
+var gameOverCardEl = document.getElementById('gameOverCard');
 var highScoreEl = document.getElementById('highScoreCard');
 
 

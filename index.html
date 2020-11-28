@@ -17,8 +17,8 @@
     
     <div class="card" id="introCard">
         <div class="card-body">
-          <h2 class="card-title">Quiz introduction</h2>
-          <p1 class="card-text">Hello! Let's test your knowledge of Subject A and ask you some questions to see how you do!</p1>
+          <h2 class="card-title" id="introCardHeader">Quiz introduction</h2>
+          <p1 class="card-text" id="introCardPara">Hello! Let's test your knowledge of Subject A and ask you some questions to see how you do!</p1>
           <br>
           <button type="button" class="btn btn-success" id="quizStartButton">Start the game!</button>
           <button type="button" class="btn btn-success" id="viewHighScoresButton">View High Scores!</button>
@@ -27,8 +27,8 @@
 
     <div class="card" id="questionCard">
         <div class="card-body">
-          <h2 class="card-title">Here's where the questions will happen</h2>
-          <p1 class="card-text">Ask some questions and answers!</p1>
+          <h2 class="card-title" id="questionCardHeader">Here's where the questions will happen</h2>
+          <p1 class="card-text" id="questionCardPara">Ask some questions and answers!</p1>
           <br>
           <button type="button" class="btn btn-success" id="answerAButton">Answer A</button>
           <button type="button" class="btn btn-success" id="answerBButton">Answer B</button>
@@ -36,6 +36,20 @@
           <button type="button" class="btn btn-success" id="answerDButton">Answer D</button>
           <br>
           <p2 class="card-text" id="answerResult">Here is where the result will display</p2>
+        </div>
+    </div>
+
+    <div class="card" id="gameOverCard">
+        <div class="card-body">
+          <h2 class="card-title" id="gameOverCardHeader">This is where the game over card will be</h2>
+          <p1 class="card-text" id="gameOverCardPara">You'll have to enter your initials to log your high score!</p1>
+          <br>
+          <div class="form-group" id="enterHighScore">
+            <label for="enterInitials">Enter Initials Here to Log Your High Score</label>
+            <input type="password" class="form-control" id="enterInitials">
+          </div>
+          <button type="button" class="btn btn-success" id="submitHighScore">Submit High Score</button>
+          <br>
         </div>
     </div>
 
