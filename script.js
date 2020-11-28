@@ -2,15 +2,32 @@
 var highScoresLinkEl = document.getElementById('highScoresLink');
 var timerCountdownEl = document.getElementById('timerCountdown');
 var introCardEl = document.getElementById('introCard');
+var introCardHeaderEl = document.getElementById('introCardHeader');
+var introCardParaEl = document.getElementById('introCardPara');
+var quizStartButtonEl = document.getElementById('quizStartButton');
+var viewHighScoresButtonEl = document.getElementById('viewHighScoresButton');
 var questionCardEl = document.getElementById('questionCard');
+var questionCardHeaderEl = document.getElementById('questionCardHeader');
+var questionCardParaEl = document.getElementById('questionCardPara');
+var questionCardEl = document.getElementById('questionCard');
+var answerAButtonEl = document.getElementById('answerAButton');
+var answerBButtonEl = document.getElementById('answerBButton');
+var answerCButtonEl = document.getElementById('answerCButton');
+var answerDButtonEl = document.getElementById('answerDButton');
+var answerResultEl = document.getElementById('answerResult');
 var gameOverCardEl = document.getElementById('gameOverCard');
-var highScoreEl = document.getElementById('highScoreCard');
+var gameOverCardHeaderEl = document.getElementById('gameOverCardHeader');
+var gameOverCardParaEl = document.getElementById('gameOverCardPara');
+var enterHighScoreEl = document.getElementById('enterHighScore');
+var enterInitialsEl = document.getElementById('enterInitials');
+var submitHighScoreEl = document.getElementById('submitHighScore');
+var startOverLinkEl = document.getElementById('startOverLink');
+var highScoreCardEl = document.getElementById('highScoreCard');
+var highScoreCardHeaderEl = document.getElementById('highScoreCardHeader');
+var highScoreCardParaEl = document.getElementById('highScoreCardPara');
+var playAgainButtonEl = document.getElementById('playAgainButton');
+var clearHighScoresButtonEl = document.getElementById('clearHighScoresButton');
 
-
-
-
-
-var startButton = document.getElementById('start_button');
 
 
 // add event listener to start button so that when it is clicked, a function performs 
