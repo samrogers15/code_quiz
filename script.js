@@ -15,6 +15,7 @@ var answerBButtonEl = document.getElementById('answerBButton');
 var answerCButtonEl = document.getElementById('answerCButton');
 var answerDButtonEl = document.getElementById('answerDButton');
 var answerResultEl = document.getElementById('answerResult');
+var currentScoreEl = document.getElementById('currentScore');
 var gameOverCardEl = document.getElementById('gameOverCard');
 var gameOverCardHeaderEl = document.getElementById('gameOverCardHeader');
 var gameOverCardParaEl = document.getElementById('gameOverCardPara');
@@ -79,19 +80,19 @@ function startQuiz () {
 
     timerInterval = setInterval(function() {
         timeLeft--;
-        timerCountdownEl.textContent = 'Time left ' + timeLeft;
+        timerCountdownEl.textContent = 'Time left ' + timeLeft +'s';
 
         if (timeLeft === 0) {
             clearInterval(timerInterval);
             showScore();
         }
     }, 1000);
-
+    
 }
 
 function askQuizQuestion() {
     if (currentQuestion === totalQuestions) {
-        return  scoreScore();
+        return  showScore();
     } else {
         var startQuestion = quizQuestions[currentQuestion];
         questionCardHeaderEl.textContent = startQuestion.question;
@@ -108,14 +109,22 @@ function askQuizQuestion() {
 // We need score to go up, time to go up, or time to go down if wrong
 function checkQuestionAnswer(answer) {
     correct = quizQuestions[currentQuestion].correctAnswer;
-    
+ 
     if (answer === correct && currentQuestion !== totalQuestions) {
         score++;
-        alert('That is correct!')
+        var displayScore = 'Curent score: ' + score;
+        currentScoreEl.textContent = displayScore;
+        console.log(displayScore);
+        var confirmCorrect = 'That is correct!';
+        answerResultEl.textContent = confirmCorrect;
         currentQuestion++;
         askQuizQuestion();
     } else if (answer !== correct && currentQuestion !== totalQuestions) {
-        alert('That is incorrect!')
+        timeLeft -=10;
+        var displayScore = 'Curent score: ' + score;
+        currentScoreEl.textContent = displayScore;
+        var confirmIncorrect = 'That is incorrect!';
+        answerResultEl.textContent = confirmIncorrect;
         currentQuestion++;
         askQuizQuestion();
     } else {
@@ -123,9 +132,12 @@ function checkQuestionAnswer(answer) {
     }
 }
 
-// Need to define this function
+// Need to define this function - it will bring the user tot he scorecard page
 function showScore() {
-
+    introCardEl.style.display = 'none';
+    questionCardEl.style.display = 'none';
+    gameOverCardEl.style.display = 'block';
+    gameOverCardParaEl.textContent = 'Your score is ' + score;
 }
 
 

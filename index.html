@@ -36,6 +36,8 @@
           <button type="button" class="btn btn-success" id="answerDButton" onclick="checkQuestionAnswer('answerDButton')">Answer D</button>
           <br>
           <p2 class="card-text" id="answerResult">Here is where the result will display</p2>
+          <br>
+          <p2 class="card-text" id="currentScore">Here is where the score will display</p2>
         </div>
     </div>
 
@@ -44,9 +46,11 @@
           <h2 class="card-title" id="gameOverCardHeader">This is where the game over card will be</h2>
           <p1 class="card-text" id="gameOverCardPara">You'll have to enter your initials to log your high score!</p1>
           <br>
+          <br>
+          <br>
           <div class="form-group" id="enterHighScore">
             <label for="enterInitials">Enter Initials Here to Log Your High Score</label>
-            <input type="password" class="form-control" id="enterInitials">
+            <input type="text" class="form-control" id="enterInitials" placeholder="Enter Initials Here">
           </div>
           <button type="button" class="btn btn-success" id="submitHighScore">Submit High Score</button>
           <br>
