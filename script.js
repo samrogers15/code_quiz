@@ -73,6 +73,8 @@ var correct;
 // This is where the quiz will start 
 quizStartButtonEl.addEventListener('click', startQuiz);
 
+// viewHighScoresButtonEl.addEventListener('click', highScores);
+
 function startQuiz () {
     introCardEl.style.display = 'none';
     questionCardEl.style.display = 'block';
@@ -134,12 +136,39 @@ function checkQuestionAnswer(answer) {
 
 // Need to define this function - it will bring the user tot he scorecard page
 function showScore() {
+    clearInterval(timerInterval);
     introCardEl.style.display = 'none';
     questionCardEl.style.display = 'none';
     gameOverCardEl.style.display = 'block';
+    timerCountdownEl.textContent = 'Game over!';
     gameOverCardParaEl.textContent = 'Your score is ' + score;
 }
 
+submitHighScoreEl.addEventListener('click', function submitHighScores() {
+    if (enterInitialsEl.value === '') {
+        alert('You must enter your initials in order to submit your score. Please try again.');
+        return false;
+    } else {
+        var storedHighScores = JSON.parse(localStorage.getItem('storedHighScores')) || [];
+        var currentPlayer = enterInitialsEl.value.trim();
+        var currentHighScore = {
+            name : currentPlayer,
+            score : score
+        };
+        introCardEl.style.display = 'none';
+        questionCardEl.style.display = 'none';
+        gameOverCardEl.style.display = 'none';
+        highScoreCardEl.style.display = 'block';
+
+        storedHighScores.push(currentHighScore);
+        localStorage.setItem('storedHighScores', JSON.stringify(storedHighScores));
+        scoreBoard();
+    }
+})
+
+function scoreBoard() {
+    
+}
 
 
 // need to add in a scorePage function
@@ -166,4 +195,3 @@ function showScore() {
 // console.log(askQuestionOne)
 // // if else statements
 
-// change text content of element to be question variable and answer array

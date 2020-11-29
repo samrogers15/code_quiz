@@ -3,7 +3,8 @@ p1 {
 }
 
 #questionCard,
-#gameOverCard {
+#gameOverCard,
+#highScoreCard {
     display: none;
 }
 
