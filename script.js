@@ -8,7 +8,7 @@ var quizStartButtonEl = document.getElementById('quizStartButton');
 var viewHighScoresButtonEl = document.getElementById('viewHighScoresButton');
 var questionCardEl = document.getElementById('questionCard');
 var questionCardHeaderEl = document.getElementById('questionCardHeader');
-var questionCardParaEl = document.getElementById('questionCardPara');
+var questionCardListEl = document.getElementById('questionCardList');
 var questionCardEl = document.getElementById('questionCard');
 var answerAButtonEl = document.getElementById('answerAButton');
 var answerBButtonEl = document.getElementById('answerBButton');
@@ -25,7 +25,8 @@ var submitHighScoreEl = document.getElementById('submitHighScore');
 var startOverLinkEl = document.getElementById('startOverLink');
 var highScoreCardEl = document.getElementById('highScoreCard');
 var highScoreCardHeaderEl = document.getElementById('highScoreCardHeader');
-var highScoreCardParaEl = document.getElementById('highScoreCardPara');
+var highScoreCardListEl = document.getElementById('highScoreCardList');
+var highScoreCardListTwoEl = document.getElementById('highScoreCardListTwo');
 var playAgainButtonEl = document.getElementById('playAgainButton');
 var clearHighScoresButtonEl = document.getElementById('clearHighScoresButton');
 
@@ -108,7 +109,7 @@ function askQuizQuestion() {
     }
 }
 
-// We need score to go up, time to go up, or time to go down if wrong
+
 function checkQuestionAnswer(answer) {
     correct = quizQuestions[currentQuestion].correctAnswer;
  
@@ -167,7 +168,15 @@ submitHighScoreEl.addEventListener('click', function submitHighScores() {
 })
 
 function scoreBoard() {
-    
+    var highScoreList = JSON.parse(localStorage.getItem('storedHighScores')) || [];
+    for (i = 0; i < highScoreList.length; i++) {
+        var nameList = document.createElement('li');
+        nameList.textContent = highScoreList[i].name;
+        highScoreCardListEl.appendChild(nameList,);
+        var scoreList = document.createElement('li');
+        scoreList.textContent = highScoreList[i].score;
+        highScoreCardListTwoEl.appendChild(scoreList);
+    }
 }
 
 
