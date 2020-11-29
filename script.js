@@ -30,68 +30,36 @@ var clearHighScoresButtonEl = document.getElementById('clearHighScoresButton');
 
 // Here is the variable that defines the quiz question objects
 var quizQuestions = [{
-    question: "Here is question one?",
-    answerA: "Here is where answer A goes quest 1",
-    answerB: "Here is where answer B goes quest 1",
-    answerC: "Here is where answer C goes quest 1",
-    answerD: "Here is where answer D goes quest 1",
-    correctAnswer: "answerBButton"},
+    question: 'Here is question one?',
+    answerA: 'Here is where answer A goes quest 1',
+    answerB: 'Here is where answer B goes quest 1',
+    answerC: 'Here is where answer C goes quest 1',
+    answerD: 'Here is where answer D goes quest 1',
+    correctAnswer: 'answerBButton'},
     
     {
-    question: "Here is question Two?",
-    answerA: "Here is where answer A goes quest 2",
-    answerB: "Here is where answer B goes quest 2",
-    answerC: "Here is where answer C goes quest 2",
-    answerD: "Here is where answer D goes quest 2",
-    correctAnswer: "answerCButton"},
+    question: 'Here is question Two?',
+    answerA: 'Here is where answer A goes quest 2',
+    answerB: 'Here is where answer B goes quest 2',
+    answerC: 'Here is where answer C goes quest 2',
+    answerD: 'Here is where answer D goes quest 2',
+    correctAnswer: 'answerCButton'},
     
     {
-    question: "Here is question Three?",
-    answerA: "Here is where answer A goes quest 3",
-    answerB: "Here is where answer B goes quest 3",
-    answerC: "Here is where answer C goes quest 3",
-    answerD: "Here is where answer D goes quest 3",
-    correctAnswer: "answerAButton"},
+    question: 'Here is question Three?',
+    answerA: 'Here is where answer A goes quest 3',
+    answerB: 'Here is where answer B goes quest 3',
+    answerC: 'Here is where answer C goes quest 3',
+    answerD: 'Here is where answer D goes quest 3',
+    correctAnswer: 'answerAButton'},
 
     {
-    question: "Here is question Four?",
-    answerA: "Here is where answer A goes quest 4",
-    answerB: "Here is where answer B goes quest 4",
-    answerC: "Here is where answer C goes quest 4",
-    answerD: "Here is where answer D goes quest 4",
+    question: 'Here is question Four?',
+    answerA: 'Here is where answer A goes quest 4',
+    answerB: 'Here is where answer B goes quest 4',
+    answerC: 'Here is where answer C goes quest 4',
+    answerD: 'Here is where answer D goes quest 4',
     correctAnswer: "answerDButton"},
-
-    {
-    question: "Here is question Five?",
-    answerA: "Here is where answer A goes quest 5",
-    answerB: "Here is where answer B goes quest 5",
-    answerC: "Here is where answer C goes quest 5",
-    answerD: "Here is where answer D goes quest 5",
-    correctAnswer: "answerCButton"},
-
-    {
-    question: "Here is question Six?",
-    answerA: "Here is where answer A goes quest 6",
-    answerB: "Here is where answer B goes quest 6",
-    answerC: "Here is where answer C goes quest 6",
-    answerD: "Here is where answer D goes quest 6",
-    correctAnswer: "answerCButton"},
-
-    {
-    question: "Here is question Seven?",
-    answerA: "Here is where answer A goes quest 7",
-    answerB: "Here is where answer B goes quest 7",
-    answerC: "Here is where answer C goes quest 7",
-    answerD: "Here is where answer D goes quest 7",
-    correctAnswer: "answerAButton"},
-
-    {
-    question: "Here is question Eight?",
-    answerA: "Here is where answer A goes quest 8",
-    answerB: "Here is where answer B goes quest 8",
-    answerC: "Here is where answer C goes quest 8",
-    answerD: "Here is where answer D goes quest 8",
-    correctAnswer: "answerBButton"},
 ]
 
 var totalQuestions = quizQuestions.length;
@@ -104,9 +72,26 @@ var correct;
 // This is where the quiz will start 
 quizStartButtonEl.addEventListener('click', startQuiz);
 
+function startQuiz () {
+    introCardEl.style.display = 'none';
+    questionCardEl.style.display = 'block';
+    askQuizQuestion();
+
+    timerInterval = setInterval(function() {
+        timeLeft--;
+        timerCountdownEl.textContent = 'Time left ' + timeLeft;
+
+        if (timeLeft === 0) {
+            clearInterval(timerInterval);
+            showScore();
+        }
+    }, 1000);
+
+}
+
 function askQuizQuestion() {
     if (currentQuestion === totalQuestions) {
-        return  scorePage();
+        return  scoreScore();
     } else {
         var startQuestion = quizQuestions[currentQuestion];
         questionCardHeaderEl.textContent = startQuestion.question;
@@ -120,11 +105,30 @@ function askQuizQuestion() {
     }
 }
 
-function startQuiz () {
-    introCardEl.style.display = 'none';
-    questionCardEl.style.display = 'block';
-    askQuizQuestion();
+// We need score to go up, time to go up, or time to go down if wrong
+function checkQuestionAnswer(answer) {
+    correct = quizQuestions[currentQuestion].correctAnswer;
+    
+    if (answer === correct && currentQuestion !== totalQuestions) {
+        score++;
+        alert('That is correct!')
+        currentQuestion++;
+        askQuizQuestion();
+    } else if (answer !== correct && currentQuestion !== totalQuestions) {
+        alert('That is incorrect!')
+        currentQuestion++;
+        askQuizQuestion();
+    } else {
+        showScore();
+    }
 }
+
+// Need to define this function
+function showScore() {
+
+}
+
+
 
 // need to add in a scorePage function
 // quizStartButtonEl.addEventListener('click', function (startQuiz){
