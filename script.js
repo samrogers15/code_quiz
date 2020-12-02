@@ -14,6 +14,7 @@ var answerAButtonEl = document.getElementById('answerAButton');
 var answerBButtonEl = document.getElementById('answerBButton');
 var answerCButtonEl = document.getElementById('answerCButton');
 var answerDButtonEl = document.getElementById('answerDButton');
+var answerButtons = document.querySelector('.button-answer');
 var answerResultEl = document.getElementById('answerResult');
 var currentScoreEl = document.getElementById('currentScore');
 var gameOverCardEl = document.getElementById('gameOverCard');
@@ -90,7 +91,6 @@ function startQuiz () {
             showScore();
         }
     }, 1000);
-    
 }
 
 function askQuizQuestion() {
@@ -108,7 +108,6 @@ function askQuizQuestion() {
         }
     }
 }
-
 
 function checkQuestionAnswer(answer) {
     correct = quizQuestions[currentQuestion].correctAnswer;
@@ -134,6 +133,7 @@ function checkQuestionAnswer(answer) {
         showScore();
     }
 }
+
 
 // Need to define this function - it will bring the user tot he scorecard page
 function showScore() {
@@ -167,7 +167,13 @@ submitHighScoreEl.addEventListener('click', function submitHighScores() {
     }
 })
 
+viewHighScoresButtonEl.addEventListener('click', scoreBoard);
+
 function scoreBoard() {
+    introCardEl.style.display = 'none';
+    questionCardEl.style.display = 'none';
+    gameOverCardEl.style.display = 'none';
+    highScoreCardEl.style.display = 'block';
     var highScoreList = JSON.parse(localStorage.getItem('storedHighScores')) || [];
     for (i = 0; i < highScoreList.length; i++) {
         var nameList = document.createElement('li');
@@ -179,6 +185,15 @@ function scoreBoard() {
     }
 }
 
+playAgainButtonEl.addEventListener('click', function (){
+    location.reload();
+})
+
+clearHighScoresButtonEl.addEventListener('click', function(){
+    localStorage.clear();
+    location.reload();
+    scoreBoard();
+})
 
 // need to add in a scorePage function
 // quizStartButtonEl.addEventListener('click', function (startQuiz){
@@ -204,3 +219,10 @@ function scoreBoard() {
 // console.log(askQuestionOne)
 // // if else statements
 
+
+// Questions for Trevor
+
+// How to append the list properly
+// Do I need the global variables or should i define them within the functions?
+// Why is there a delay in the timer starting
+// Where should I put the event listeners for the answer buttons instead of onclick in html
