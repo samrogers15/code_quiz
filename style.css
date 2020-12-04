@@ -1,18 +1,22 @@
+/* This code sets the style for the entire page */
 * {
     font-family: Geneva, sans-serif;
     color: white;
 }
 
+/* This code floats all p1 elements to the left of the page */
 p1 {
     float: left;
 }
 
+/* This code sets the bootstrap cards with the following elements to be hidden upon starting the page  */
 #questionCard,
 #gameOverCard,
 #highScoreCard {
     display: none;
 }
 
+/* This code sets the background color and padding for all of the bootstrap cards used in the program */
 #introCard,
 #questionCard,
 #gameOverCard,
@@ -21,32 +25,39 @@ p1 {
     padding-left: 5px;
 }
 
+/* This code sets the size of the font for the header on the question card. */
 #questionCardHeader {
     font-size: 15px;
 }
 
+/* This code gives a bit of space above the top of the buttons on the intro card */
 #quizStartButton,
 #viewHighScoresButton {
     margin-top: 20px;
 }
 
+/* This code gives the play again button a bit of space on the high scores card */
 #playAgainButton {
     margin-right: 10px;
 }
 
+/* This code floats the initials for the high scores to the left of the card */
 #highScoreCardList {
     float: left;
 }
 
+/* This code floats the score for the high scores to the right of the card */
 #highScoreCardListTwo {
     float: right;
 }
 
+/* This code gives the play again button and clear high scores button a bit of padding below the card */
 #playAgainButton,
 #clearHighScoresButton {
     padding-bottom: 10px;
 }
 
+/* This code floats the timer to the right of the page and sets some style to it */
 #timerCountdown {
     float: right;
     padding-right: 10px;
@@ -54,10 +65,7 @@ p1 {
     color: black;
 }
 
+/* This code sets the width of the bootstrap cards used */
 .card {
     width: 75%;
-}
-
-.hello {
-    font-size: 100px;
 }

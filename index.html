@@ -9,11 +9,13 @@
 
 </head>
 <body>
-    
+
+    <!-- This is the html code for the timer. -->
     <h1>
         <p1 id="timerCountdown">Time left: 0s</p1>
     </h1>
     
+    <!-- This bootstrap card houses the introduction to the quiz. -->
     <div class="card" id="introCard">
         <div class="card-body">
           <h2 class="card-title" id="introCardHeader">Welcome to the Javascript Quiz!</h2>
@@ -24,6 +26,7 @@
         </div>
     </div>
 
+    <!-- This bootstrap card houses the quiz questions as they are cycled through and answered. It contains inline javascript functions to pass the answer buttons through the checkQuestionAnswer function if you select a specific button to answer a question. -->
     <div class="card" id="questionCard">
         <div class="card-body">
           <h2 class="card-title" id="questionCardTitle">Javascript Quiz</h2>
@@ -40,6 +43,7 @@
         </div>
     </div>
 
+    <!-- This bootstrap card contains the game over screen, where a user is prompted to enter their initials to see high scores. -->
     <div class="card" id="gameOverCard">
         <div class="card-body">
           <h2 class="card-title" id="gameOverCardHeader">You finished the quiz - you're awesome!</h2>
@@ -56,6 +60,7 @@
         </div>
     </div>
 
+    <!-- This bootstrap card contains the high score screen, where users can view their high scores, clear the high scores, and start the game over. -->
     <div class="card" id="highScoreCard">
         <div class="card-body">
             <div class="row">

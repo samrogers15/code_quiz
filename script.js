@@ -1,5 +1,4 @@
 // Here are all of the variables that select the main elements on the html page
-var highScoresLinkEl = document.getElementById('highScoresLink');
 var timerCountdownEl = document.getElementById('timerCountdown');
 var introCardEl = document.getElementById('introCard');
 var introCardHeaderEl = document.getElementById('introCardHeader');
@@ -8,18 +7,15 @@ var quizStartButtonEl = document.getElementById('quizStartButton');
 var viewHighScoresButtonEl = document.getElementById('viewHighScoresButton');
 var questionCardEl = document.getElementById('questionCard');
 var questionCardHeaderEl = document.getElementById('questionCardHeader');
-var questionCardEl = document.getElementById('questionCard');
 var answerAButtonEl = document.getElementById('answerAButton');
 var answerBButtonEl = document.getElementById('answerBButton');
 var answerCButtonEl = document.getElementById('answerCButton');
 var answerDButtonEl = document.getElementById('answerDButton');
-var answerButtons = document.querySelector('.button-answer');
 var answerResultEl = document.getElementById('answerResult');
 var currentScoreEl = document.getElementById('currentScore');
 var gameOverCardEl = document.getElementById('gameOverCard');
 var gameOverCardHeaderEl = document.getElementById('gameOverCardHeader');
 var gameOverCardParaEl = document.getElementById('gameOverCardPara');
-var enterHighScoreEl = document.getElementById('enterHighScore');
 var enterInitialsEl = document.getElementById('enterInitials');
 var submitHighScoreEl = document.getElementById('submitHighScore');
 var startOverLinkEl = document.getElementById('startOverLink');
@@ -60,10 +56,11 @@ var quizQuestions = [{
     answerA: 'Answer A: numberConvert()',
     answerB: 'Answer B: convert()',
     answerC: 'Answer C: parse()',
-    answerD: 'AnswerD: parseInt()',
+    answerD: 'Answer D: parseInt()',
     correctAnswer: "answerDButton"},
 ]
 
+// Below are some global variables that are used throughout the functions defined below
 var totalQuestions = quizQuestions.length;
 var currentQuestion = 0;
 var timeLeft = 51;
@@ -71,11 +68,10 @@ var timerInterval;
 var score = 0;
 var correct;
 
-// This is where the quiz will start 
+// This event listener allows the quiz to start with the click of the start quiz button
 quizStartButtonEl.addEventListener('click', startQuiz);
 
-// viewHighScoresButtonEl.addEventListener('click', highScores);
-
+// This function defines the startQuiz function that is called above when the start quiz button is pressed
 function startQuiz () {
     introCardEl.style.display = 'none';
     questionCardEl.style.display = 'block';
@@ -92,6 +88,7 @@ function startQuiz () {
     }, 1000);
 }
 
+// This function defines the askQuizQuestion function that is called in startQuiz when the start quiz button is pressed. It initiates the first quiz question and cycles through the quiz questions until they have all been answered.
 function askQuizQuestion() {
     if (currentQuestion === totalQuestions) {
         return  showScore();
@@ -108,6 +105,7 @@ function askQuizQuestion() {
     }
 }
 
+// This function defines the checkQuestionAnswer function that allows the answer that the user selects to be checked if it is correct. The function is called onclick in the html page.
 function checkQuestionAnswer(answer) {
     correct = quizQuestions[currentQuestion].correctAnswer;
  
@@ -134,7 +132,7 @@ function checkQuestionAnswer(answer) {
 }
 
 
-// Need to define this function - it will bring the user tot he scorecard page
+// This function allows the scorecard card to show up when the quiz game is over.
 function showScore() {
     clearInterval(timerInterval);
     introCardEl.style.display = 'none';
@@ -144,6 +142,7 @@ function showScore() {
     gameOverCardParaEl.textContent = 'Your score is ' + score +'. Nice job friend!';
 }
 
+// This event listener allows the user to submit their high score and does not allow them to click submit if the initials field is empty. It also stores their high score in local storage and displays any high scores that are being stored there.
 submitHighScoreEl.addEventListener('click', function submitHighScores() {
     if (enterInitialsEl.value === '') {
         alert('You must enter your initials in order to submit your score. Please try again.');
@@ -166,6 +165,7 @@ submitHighScoreEl.addEventListener('click', function submitHighScores() {
     }
 })
 
+// This event listener allows the user to go directly to the high score page from the quiz introduction.
 viewHighScoresButtonEl.addEventListener('click', scoreBoard);
 
 function scoreBoard() {
@@ -184,43 +184,13 @@ function scoreBoard() {
     }
 }
 
+// This event listener allows the user to play again by reloading the page.
 playAgainButtonEl.addEventListener('click', function (){
     location.reload();
 })
 
+// This event listener engages a function that clears the local storage so that there are no high scores displayed anymore.
 clearHighScoresButtonEl.addEventListener('click', function(){
     localStorage.clear();
     scoreBoard();
 })
-
-// need to add in a scorePage function
-// quizStartButtonEl.addEventListener('click', function (startQuiz){
-//     introCardEl.style.display = 'none';
-//     console.log('this is the quiz start button');
-//     if (currentQuestions === totalQuestions)
-// }
-// )
-
-
-
-// add event listener to start button so that when it is clicked, a function performs 
-
-// make questions a variable and make the answers an array (make an object with)
-
-// var askQuestionOne = {
-//     questionOne: 'how old are you?',
-//     answerA: 23,
-//     answerB: 24,
-//     answerC: 25,
-//     answerD: 26,
-// }
-// console.log(askQuestionOne)
-// // if else statements
-
-
-// Questions for Trevor
-
-// How to append the list properly
-// Do I need the global variables or should i define them within the functions?
-// Why is there a delay in the timer starting
-// Where should I put the event listeners for the answer buttons instead of onclick in html
