@@ -12,7 +12,7 @@
 This program was created within javascript and uses an html page, a css style sheet, and a javascript page. Everything is linked to the html page properly and the site is responsive such that if you view it from a mobile or tablet device, then it will operate properly.
 
 ## Screenshots
-![Code Quiz](./Assets/code_quiz_screenshot.png)
+![Code Quiz](./assets/code_quiz_screenshot.png)
 
 ## Technologies
 * HTML
