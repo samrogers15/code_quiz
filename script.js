@@ -8,7 +8,6 @@ var quizStartButtonEl = document.getElementById('quizStartButton');
 var viewHighScoresButtonEl = document.getElementById('viewHighScoresButton');
 var questionCardEl = document.getElementById('questionCard');
 var questionCardHeaderEl = document.getElementById('questionCardHeader');
-var questionCardListEl = document.getElementById('questionCardList');
 var questionCardEl = document.getElementById('questionCard');
 var answerAButtonEl = document.getElementById('answerAButton');
 var answerBButtonEl = document.getElementById('answerBButton');
@@ -33,35 +32,35 @@ var clearHighScoresButtonEl = document.getElementById('clearHighScoresButton');
 
 // Here is the variable that defines the quiz question objects
 var quizQuestions = [{
-    question: 'Here is question one?',
-    answerA: 'Here is where answer A goes quest 1',
-    answerB: 'Here is where answer B goes quest 1',
-    answerC: 'Here is where answer C goes quest 1',
-    answerD: 'Here is where answer D goes quest 1',
+    question: 'When using the .querySelector method to select an element with a specific Id, which symbol do you place in front of the Id name?',
+    answerA: 'Answer A: $',
+    answerB: 'Answer B: #',
+    answerC: 'Answer C: !',
+    answerD: 'Answer D: &',
     correctAnswer: 'answerBButton'},
     
     {
-    question: 'Here is question Two?',
-    answerA: 'Here is where answer A goes quest 2',
-    answerB: 'Here is where answer B goes quest 2',
-    answerC: 'Here is where answer C goes quest 2',
-    answerD: 'Here is where answer D goes quest 2',
+    question: 'What html tag must be included in order for javascript to be operational?',
+    answerA: 'Answer A: <body>',
+    answerB: 'Answer B: <html>',
+    answerC: 'Answer C: <script>',
+    answerD: 'Answer D: <div>',
     correctAnswer: 'answerCButton'},
     
     {
-    question: 'Here is question Three?',
-    answerA: 'Here is where answer A goes quest 3',
-    answerB: 'Here is where answer B goes quest 3',
-    answerC: 'Here is where answer C goes quest 3',
-    answerD: 'Here is where answer D goes quest 3',
+    question: 'If you wanted to operationalize a button, what Javascript method might you use?',
+    answerA: 'Answer A: addEventListener()',
+    answerB: 'Answer B: getElementbyId()',
+    answerC: 'Answer C: querySelector()',
+    answerD: 'Answer D: querySelectorAll()',
     correctAnswer: 'answerAButton'},
 
     {
-    question: 'Here is question Four?',
-    answerA: 'Here is where answer A goes quest 4',
-    answerB: 'Here is where answer B goes quest 4',
-    answerC: 'Here is where answer C goes quest 4',
-    answerD: 'Here is where answer D goes quest 4',
+    question: 'What function would you use to convert a number stored as a string into an integer?',
+    answerA: 'Answer A: numberConvert()',
+    answerB: 'Answer B: convert()',
+    answerC: 'Answer C: parse()',
+    answerD: 'AnswerD: parseInt()',
     correctAnswer: "answerDButton"},
 ]
 
@@ -84,7 +83,7 @@ function startQuiz () {
 
     timerInterval = setInterval(function() {
         timeLeft--;
-        timerCountdownEl.textContent = 'Time left ' + timeLeft +'s';
+        timerCountdownEl.textContent = 'Time left: ' + timeLeft +'s';
 
         if (timeLeft === 0) {
             clearInterval(timerInterval);
@@ -142,7 +141,7 @@ function showScore() {
     questionCardEl.style.display = 'none';
     gameOverCardEl.style.display = 'block';
     timerCountdownEl.textContent = 'Game over!';
-    gameOverCardParaEl.textContent = 'Your score is ' + score;
+    gameOverCardParaEl.textContent = 'Your score is ' + score +'. Nice job friend!';
 }
 
 submitHighScoreEl.addEventListener('click', function submitHighScores() {
@@ -191,7 +190,6 @@ playAgainButtonEl.addEventListener('click', function (){
 
 clearHighScoresButtonEl.addEventListener('click', function(){
     localStorage.clear();
-    location.reload();
     scoreBoard();
 })
 

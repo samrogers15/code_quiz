@@ -1,3 +1,7 @@
+* {
+    font-family: Geneva, sans-serif;
+}
+
 p1 {
     float: left;
 }
@@ -8,10 +12,24 @@ p1 {
     display: none;
 }
 
+#introCard,
+#questionCard,
+#gameOverCard,
+#highScoreCard {
+    padding-left: 5px;
+}
 
-#highScoresLink,
-#startOverLink {
-    font-size: 50px;
+#questionCardHeader {
+    font-size: 15px;
+}
+
+#quizStartButton,
+#viewHighScoresButton {
+    margin-top: 20px;
+}
+
+#playAgainButton {
+    margin-right: 10px;
 }
 
 #highScoreCardList {
@@ -30,13 +48,12 @@ p1 {
 #timerCountdown {
     float: right;
     padding-right: 10px;
+    font-size: 25px;
 }
 
 .card {
     width: 75%;
 }
-
-.btn
 
 .hello {
     font-size: 100px;

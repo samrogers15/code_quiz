@@ -11,39 +11,39 @@
 <body>
     
     <h1>
-        <p1 id="timerCountdown">Timer Here</p1>
+        <p1 id="timerCountdown">Time left: 0s</p1>
     </h1>
     
     <div class="card" id="introCard">
         <div class="card-body">
-          <h2 class="card-title" id="introCardHeader">Quiz introduction</h2>
-          <p1 class="card-text" id="introCardPara">Hello! Let's test your knowledge of Subject A and ask you some questions to see how you do!</p1>
+          <h2 class="card-title" id="introCardHeader">Welcome to the Javascript Quiz!</h2>
+          <p1 class="card-text" id="introCardPara">Hello! Let's test your knowledge of Javascript and entry level programming with a multiple choice quiz. You will be given 50 seconds to complete the quiz. If you answer a question correctly, you'll gain a point. If you answer a question incorrectly, you'll be docked 10 seconds on the timer. Click the start button to get going or click the high scores button to see your competition. Good luck!</p1>
           <br>
-          <button type="button" class="btn btn-success" id="quizStartButton">Start the game!</button>
+          <button type="button" class="btn btn-success" id="quizStartButton">Start The Game!</button>
           <button type="button" class="btn btn-success" id="viewHighScoresButton">View High Scores!</button>
         </div>
     </div>
 
     <div class="card" id="questionCard">
         <div class="card-body">
-          <h2 class="card-title" id="questionCardHeader">Here's where the questions will happen</h2>
-          <ul class="card-text" id="questionCardList">Ask some questions and answers!</ul>
+          <h2 class="card-title" id="questionCardTitle">Javascript Quiz</h2>
+          <h2 class="card-title" id="questionCardHeader"></h2>
           <br>
           <button type="button" class="btn btn-success button-answer" id="answerAButton" onclick="checkQuestionAnswer('answerAButton')">Answer A</button>
           <button type="button" class="btn btn-success button-answer" id="answerBButton" onclick="checkQuestionAnswer('answerBButton')">Answer B</button>
           <button type="button" class="btn btn-success button-answer" id="answerCButton" onclick="checkQuestionAnswer('answerCButton')">Answer C</button>
           <button type="button" class="btn btn-success button-answer" id="answerDButton" onclick="checkQuestionAnswer('answerDButton')">Answer D</button>
           <br>
-          <p2 class="card-text" id="answerResult">Here is where the result will display</p2>
+          <p2 class="card-text" id="answerResult"></p2>
           <br>
-          <p2 class="card-text" id="currentScore">Here is where the score will display</p2>
+          <p2 class="card-text" id="currentScore"></p2>
         </div>
     </div>
 
     <div class="card" id="gameOverCard">
         <div class="card-body">
-          <h2 class="card-title" id="gameOverCardHeader">This is where the game over card will be</h2>
-          <p1 class="card-text" id="gameOverCardPara">You'll have to enter your initials to log your high score!</p1>
+          <h2 class="card-title" id="gameOverCardHeader">You finished the quiz - you're awesome!</h2>
+          <p1 class="card-text" id="gameOverCardPara"></p1>
           <br>
           <br>
           <br>
@@ -59,11 +59,11 @@
     <div class="card" id="highScoreCard">
         <div class="card-body">
             <div class="row">
-                <h2 class="card-title" id="highScoreCardHeader">Here's where the high scores will go</h2>
+                <h2 class="card-title" id="highScoreCardHeader">All-time High Scores</h2>
             </div>
             <div class="row">
-                <ul class="card-text" id="highScoreCardList">Here's all the high scores!</ul>
-                <ul class="card-text" id="highScoreCardListTwo">Here's all the high scores!</ul>
+                <ul class="card-text" id="highScoreCardList">Initials</ul>
+                <ul class="card-text" id="highScoreCardListTwo">Score</ul>
             </div>
           <br>
           <br>
