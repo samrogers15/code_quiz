@@ -12,7 +12,7 @@
 This program was created within javascript and uses an html page, a css style sheet, and a javascript page. Everything is linked to the html page properly and the site is responsive such that if you view it from a mobile or tablet device, then it will operate properly.
 
 ## Screenshots
-![Random Password Generator](./Assets/images/random-password-generator-screenshot.png)
+![Code Quiz](./Assets/code_quiz_screenshot.png)
 
 ## Technologies
 * HTML
@@ -20,7 +20,7 @@ This program was created within javascript and uses an html page, a css style sh
 * Javascript
 
 ## Live link
-https://samrogers15.github.io/random-password-generator/
+https://samrogers15.github.io/code_quiz/
 
 ## Contact
 Created by Sam Rogers (https://www.linkedin.com/in/samuelerogers/) - feel free to contact me.
